@@ -1,0 +1,49 @@
+<div class = "container">
+  <mat-toolbar color = "primary" >Audio Player</mat-toolbar>
+  
+<div class = "logo-container">
+  <div class = " col-md-12 logo">
+    <mat-icon class = "logo" color = "primary" >music_note</mat-icon> 
+  </div>
+    <p class = "col-md-12 text-center">Audio Player</p>
+</div>
+ 
+<div class = "song-list">
+  <mat-card-content color = "primary">
+    <p style = "color:gray">Songs</p>
+    <mat-list *ngFor = "let file of files" >
+      <mat-icon color = "primary">music_note</mat-icon>
+      <h4 mat-line>{{ file.name }}</h4>
+      <h5 mat-line>{{file.author}}</h5>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-card-content>
+</div>
+
+  <div class = "media-player">
+    <mat-toolbar color = "primary">
+      <mat-toolbar-row>
+        <mat-slider min=0 max =306 step=1 value = 42  thumbLabel ></mat-slider>
+      </mat-toolbar-row>
+      <mat-toolbar-row class = "media-action-bar">
+        <button mat-button [disabled] = "isFirstPlaying()">
+          <mat-icon mat-list-icon>skip_previous</mat-icon>
+        </button>
+
+        <button mat-button  *ngIf = "state"  (click) = "play()">
+          <mat-icon mat-list-icon>play_circle_filled</mat-icon>
+        </button>
+        <button mat-button *ngIf = "!state" (click) = "pause()">
+          <mat-icon mat-list-icon>pause</mat-icon>
+        </button>
+
+        <button mat-button [disabled] = "isLastPlaying()">
+          <mat-icon mat-list-icon>skip_next</mat-icon>
+        </button>
+        
+       
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+  </div>
+</div>

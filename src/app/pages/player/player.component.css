@@ -1,0 +1,56 @@
+.mat-divider {
+    border-top-color: gray;
+    border-top-width: 2px;
+    opacity: 0.5;
+  }
+ 
+  .logo-container{
+    height: 35vh;
+  }
+  div.logo{
+    height: 28vh;
+    position: relative;
+    justify-content: center;
+    vertical-align: middle;
+    margin : 0 0 0 2vh;
+    padding: 5vh; 
+    transition-duration: 1s;
+    align-items: center;
+  }
+  mat-icon.logo{
+    
+    font-size:25vh;
+    position: relative;
+    top:0;
+    left : 30vw;
+    transform: translate(-50%,0);
+  } 
+  
+ .logo-container>p{
+   height: 10vh;
+   font-size:large;
+ }
+ .song-list{
+  padding-bottom: 2%;
+}
+  .mat-list:hover{
+    color: #9400D3;
+    transform: scale(1.01);
+    transition-duration: 1s;
+  }
+
+mat-slider{
+  width:100%;
+  color: white;
+} 
+
+button{
+  position: relative;
+  width:33%;
+  
+
+}
+button:hover{
+  transform: scale(1.01);
+    transition-duration: 1s;
+}
