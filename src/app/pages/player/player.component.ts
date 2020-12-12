@@ -19,7 +19,7 @@ export class PlayerComponent implements OnInit {
   duration: number;
   currentSong:any = {};
   title: string;
-  el: any;
+  
 
   constructor(public audioService: AudioService, 
     public cloudService : CloudService) { 
@@ -92,6 +92,7 @@ export class PlayerComponent implements OnInit {
   }
 
   onKeyUp(event: KeyboardEvent){
+    
     if(event.keyCode === 32){
       if (this.state.playing){
         this.pause();
@@ -101,9 +102,25 @@ export class PlayerComponent implements OnInit {
       }
       console.log("space is pressed");
     }
-    console.log (this.state.playing);
-    console.log(event.code);
-    console.log(event.keyCode);
+    else if (event.keyCode === 37){
+      if (this.state.currentTime>5){
+        this.audioService.seekTo(this.state.currentTime-5);
+        this.state.currentTime -=5;
+      }
+      else{
+        this.audioService.seekTo(0);
+        this.state.currentTime =0;
+      }
+    }
+    else if (event.keyCode === 39){
+      if (this.state.currentTime< this.state.duration-5){
+        this.audioService.seekTo(this.state.currentTime+5);
+        this.state.currentTime +=5;
+      }
+      else{
+        this.audioService.seekTo(this.duration);
+        this.state.currentTime =this.duration;
+      }
   }
   
  
