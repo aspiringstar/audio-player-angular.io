@@ -37,7 +37,19 @@
     color: #9400D3;
     transform: scale(1.01);
     transition-duration: 1s;
+    cursor: default;
   }
+ .active{
+  color: #9400D3;
+  transform: scale(1.01);
+  transition-duration: 1s;
+  cursor: default;
+ } 
+  /*.mat-list:visited{
+    color: #9400D3;
+    transform: scale(1.01);
+    
+  } */
 
 mat-slider{
   width:100%;
