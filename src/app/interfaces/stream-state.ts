@@ -5,6 +5,7 @@ export interface StreamState {
     readableCurrentTime : string,
     readableDuration : string,
     canplay: boolean,
-    error: boolean
+    error: boolean,
+    active: boolean
 
 }

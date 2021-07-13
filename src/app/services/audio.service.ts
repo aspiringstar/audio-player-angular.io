@@ -19,7 +19,8 @@ export class AudioService {
     readableCurrentTime : '',
     readableDuration : '',
     canplay: false,
-    error: false
+    error: false,
+    active:false
   };
 
   private audioObj = new Audio();
@@ -77,6 +78,7 @@ export class AudioService {
         break;
       case "playing":
         this.state.playing = true;
+        this.state.active = true;
         break;
       case "pause":
         this.state.playing = false;
@@ -100,7 +102,8 @@ export class AudioService {
     readableCurrentTime : '',
     readableDuration : '',
     canplay: false,
-    error: false
+    error: false,
+    active: false
     };
   }
 

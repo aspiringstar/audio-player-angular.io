@@ -19,7 +19,7 @@ export class PlayerComponent implements OnInit {
   duration: number;
   currentSong:any = {};
   title: string;
-  
+  logo : string;
 
   constructor(public audioService: AudioService, 
     public cloudService : CloudService) { 
@@ -29,6 +29,7 @@ export class PlayerComponent implements OnInit {
       this.state = state;
     });
     this.title = 'Audio Player';
+    this.logo  = 'music_note';
   
   }
 

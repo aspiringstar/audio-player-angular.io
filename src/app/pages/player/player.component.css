@@ -6,30 +6,52 @@
  
   .logo-container{
     height: 35vh;
+    display: grid;
+    grid-template-columns:  1fr;
+    row-gap: 0vh;
+
+    position:relative;
   }
+
+ 
   div.logo{
     height: 28vh;
+    width:240px;
     position: relative;
+    left:48.8%;
+    transform: translate(-50%,0);
+    border:none;
+    margin-left:none;
     justify-content: center;
     vertical-align: middle;
-    margin : 0 0 0 2vh;
-    padding: 5vh; 
+    margin: 0 0 0 2vh;
+    padding: 3vh;
     transition-duration: 1s;
-    align-items: center;
+    align-items: center;  
+}
+
+  .song-img{
+  height:100%;
+  object-fit: fill;
+
+  position: relative;
+  left:50%;
+  transform: translate(-50%,0);
   }
   mat-icon.logo{
-    
-    font-size:25vh;
-    position: relative;
-    top:0;
-    left : 30vw;
-    transform: translate(-50%,0);
-  } 
-  
- .logo-container>p{
-   height: 10vh;
-   font-size:large;
- }
+    font-size: 24vh;
+    position: absolute;
+    top:10%;
+    left:18%;
+}
+
+.title{
+  width:180px;
+  position: relative;
+  left:50%;
+  transform: translate(-50%,0);
+}
+ 
  .song-list{
   padding-bottom: 2%;
 }
