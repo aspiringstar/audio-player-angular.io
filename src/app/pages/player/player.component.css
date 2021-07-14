@@ -52,39 +52,15 @@
   transform: translate(-50%,0);
 }
  
- .song-list{
-  padding-bottom: 2%;
-}
-  .mat-list:hover{
-    color: #9400D3;
-    transform: scale(1.01);
-    transition-duration: 1s;
-    cursor: default;
-  }
- .active{
-  color: #9400D3;
-  transform: scale(1.01);
-  transition-duration: 1s;
-  cursor: default;
- } 
-  /*.mat-list:visited{
-    color: #9400D3;
-    transform: scale(1.01);
-    
-  } */
-
+ 
 mat-slider{
   width:100%;
   color: white;
 } 
 
-button{
-  position: relative;
-  width:33%;
-  
+.media-action-bar{
+  width:100%;
 
-}
-button:hover{
-  transform: scale(1.01);
-    transition-duration: 1s;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

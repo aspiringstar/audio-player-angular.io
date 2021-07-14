@@ -1,0 +1,13 @@
+<div class = "song-list" >
+  <mat-card-content color = "primary">
+    <p style = "color:gray;">Songs</p>
+    <div style = "position:relative; overflow-y: auto; overflow-x: hidden; max-height: 30vh;" >
+      <mat-list  style = "margin-left:5px; " *ngFor = "let file of files; let i = index"  (click)="openFile(file,i)" [ngClass]="file.isActive ? 'active':'files'"> 
+        <mat-icon color = "primary">music_note</mat-icon>
+        <h4 mat-line>{{ file.name }}</h4>
+        <h5 mat-line>{{file.author}}</h5>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+  </mat-card-content>
+</div>

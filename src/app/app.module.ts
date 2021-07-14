@@ -12,13 +12,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlayerComponent } from './pages/player/player.component';
 
-import {AppRoutingModule} from "./app-routing/app-routing.module"
+import {AppRoutingModule} from "./app-routing/app-routing.module";
+import { SongListComponent } from './song-list/song-list.component'
 
 @NgModule({
   declarations: [
     
     AppComponent,
-    PlayerComponent
+    PlayerComponent,
+    SongListComponent
   ],
   imports: [
     MatButtonModule,

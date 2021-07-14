@@ -66,7 +66,7 @@ export class AudioService {
     events.forEach(event => {
       obj.removeEventListener(event, handler);
     });
-  }
+  } 
 
   private updateStateEvents(event : Event) : void {
     switch (event.type)

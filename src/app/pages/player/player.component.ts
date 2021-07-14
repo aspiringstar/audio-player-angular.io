@@ -3,6 +3,7 @@ import * as moment from "moment";
 import { AudioService } from "../../services/audio.service";
 import { CloudService } from "../../services/cloud.service";
 import { StreamState } from "../../interfaces/stream-state";
+import { CurrentsongService } from '../../services/currentsong.service';
 
 @Component({
   selector: 'app-player',
@@ -11,7 +12,7 @@ import { StreamState } from "../../interfaces/stream-state";
   host: {
     '(document:keyup)': 'onKeyUp($event)'
   }
-})
+}) 
 export class PlayerComponent implements OnInit {
   files :Array<any> =[ ];
   audioObj = new Audio ();
@@ -22,7 +23,8 @@ export class PlayerComponent implements OnInit {
   logo : string;
 
   constructor(public audioService: AudioService, 
-    public cloudService : CloudService) { 
+    public cloudService : CloudService,
+    public currentSongService : CurrentsongService) { 
     cloudService.getFiles().subscribe(files => {
       this.files = files });
     audioService.getState().subscribe(state => {
@@ -30,16 +32,19 @@ export class PlayerComponent implements OnInit {
     });
     this.title = 'Audio Player';
     this.logo  = 'music_note';
-  
+    this.currentSong = currentSongService.getcurrentSong();
+    
   }
 
   ngOnInit() {
   }
 
   isFirstPlaying(){
+    
     return this.currentSong.index === 0;
   }
   isLastPlaying(){
+    console.log(this.currentSong.index);
     return this.currentSong.index === (this.files.length-1);
   }
   play(){
@@ -75,13 +80,14 @@ export class PlayerComponent implements OnInit {
   
   playstream(url){
     this.audioService.playStream(url).subscribe(events => {
-
+      
     });
+    
   }
 
   openFile(file, index) {
     console.log("playing");
-  
+    
     this.currentSong = {index, file};
     this.audioService.stop();
     this.playstream(file.url);
