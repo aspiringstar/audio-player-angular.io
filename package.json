@@ -1,6 +1,7 @@
 {
   "name": "angular-audio",
   "version": "0.0.0",
+  "default": "main.html",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

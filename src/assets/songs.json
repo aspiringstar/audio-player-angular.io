@@ -1,0 +1,27 @@
+{
+     "songs" : [
+        {
+            "name": "Beautiful", 
+            "author" : "Eminem", 
+            "url" :"../assets/Beautiful.mp3", 
+            "isActive":"false"
+        },
+
+        {   
+            "name": "Timber", 
+            "author" : "Kesha", 
+            "url" :"../assets/Timber.flac", 
+            "isActive":"false"
+        },
+            
+
+        {   
+            "name": "Canon", 
+            "author" : "Pachabel", 
+            "url" :"../assets/canon.mp3", 
+            "isActive":"false"
+        }
+            
+    ]
+
+}

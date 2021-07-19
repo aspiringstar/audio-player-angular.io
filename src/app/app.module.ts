@@ -14,6 +14,7 @@ import { PlayerComponent } from './pages/player/player.component';
 
 import {AppRoutingModule} from "./app-routing/app-routing.module";
 import { SongListComponent } from './song-list/song-list.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SongListComponent } from './song-list/song-list.component'
     MatSliderModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

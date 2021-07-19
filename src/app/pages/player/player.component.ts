@@ -23,10 +23,14 @@ export class PlayerComponent implements OnInit {
   logo : string;
 
   constructor(public audioService: AudioService, 
-    public cloudService : CloudService,
+    public cloudService : CloudService, 
     public currentSongService : CurrentsongService) { 
     cloudService.getFiles().subscribe(files => {
-      this.files = files });
+      this.files = files 
+      //console.log(this.files);
+    });
+
+    
     audioService.getState().subscribe(state => {
       this.state = state;
     });
@@ -44,7 +48,7 @@ export class PlayerComponent implements OnInit {
     return this.currentSong.index === 0;
   }
   isLastPlaying(){
-    console.log(this.currentSong.index);
+    //console.log(this.currentSong.index);
     return this.currentSong.index === (this.files.length-1);
   }
   play(){

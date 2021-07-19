@@ -18,13 +18,18 @@ export class SongListComponent implements OnInit {
   duration: number;
   currentSong:any = {};
   title: string; 
-  logo : string;
+  logo : string; 
 
   constructor(public audioService: AudioService, 
     public cloudService : CloudService,
     public currentSongService : CurrentsongService) { 
     cloudService.getFiles().subscribe(files => {
-      this.files = files });
+      this.files = files
+      console.log(this.files);
+      this.files.forEach((e) => {
+        e.isActive = false;
+      });
+    });
     audioService.getState().subscribe(state => {
       this.state = state;
     
